@@ -1,0 +1,9 @@
+ipdb
+jupyter
+matplotlib
+numpy
+pandas
+mock
+nose
+coverage
+seaborn
