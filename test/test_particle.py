@@ -1,7 +1,7 @@
 from mock import patch, MagicMock, sentinel, call
 import unittest
-from travdist import particle
-from travdist import fall_velocity
+from tephrange import particle
+from tephrange import fall_velocity
 
 
 class TestParticle(unittest.TestCase):

@@ -1,7 +1,7 @@
 import numpy as np
 import unittest
 
-from travdist import density
+from tephrange import density
 
 
 class TestBP2003(unittest.TestCase):

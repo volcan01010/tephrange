@@ -1,7 +1,7 @@
 from mock import patch, sentinel
 import unittest
 
-from travdist import atmos
+from tephrange import atmos
 
 class TestAtmos(unittest.TestCase):
     def test_celcius(self):

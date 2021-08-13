@@ -2,7 +2,7 @@
 """Functions for calculating terminal velocity of particles using different
 methods."""
 
-from travdist import atmos
+from tephrange import atmos
 import numpy as np
 
 GRAVITY = atmos.G

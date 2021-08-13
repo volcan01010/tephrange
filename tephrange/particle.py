@@ -6,9 +6,9 @@ Created on Wed Sep  2 15:00:03 2015
 
 @author: jsteven5
 """
-from travdist import atmos
-from travdist import density
-from travdist import fall_velocity
+from tephrange import atmos
+from tephrange import density
+from tephrange import fall_velocity
 
 
 class Particle:

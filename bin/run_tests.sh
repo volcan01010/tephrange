@@ -2,4 +2,4 @@
 
 nosetests --with-coverage \
           --cover-erase --cover-html \
-          --cover-package travdist $1 $2
+          --cover-package tephrange $1 $2

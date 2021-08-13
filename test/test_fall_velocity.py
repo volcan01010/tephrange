@@ -1,5 +1,5 @@
 import unittest
-from travdist import fall_velocity as fv
+from tephrange import fall_velocity as fv
 
 
 class TestGanser(unittest.TestCase):
