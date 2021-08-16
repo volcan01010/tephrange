@@ -18,7 +18,7 @@ def stokes(diameter,
     """
 
     velocity = (1/18.0) * (density - atm_density) / atm_viscosity * \
-               GRAVITY * diameter**2
+                GRAVITY * diameter**2
     return velocity
 
 
@@ -26,7 +26,7 @@ def ganser(diameter, sphericity=0.7,
            density=2300, atm_density=ATM_DENSITY, atm_viscosity=ATM_VISCOSITY):
     """
     Calculates terminal velocity of a particle of given diameter (m) and
-    sphericity using the Ganser (1993) equation.  Default values are for 
+    sphericity using the Ganser (1993) equation.  Default values are for
     andesite at sea level, as used in Stevenson et al (2015).
     """
 
@@ -39,7 +39,8 @@ def ganser(diameter, sphericity=0.7,
                       atm_density, atm_viscosity)  # First guess is Stokes'
     velocity_difference = 99999
     while abs(velocity_difference) > 0.000001:  # Usually < 15 iterations
-        reynolds = _get_reynolds(diameter, velocity, atm_density, atm_viscosity)
+        reynolds = _get_reynolds(diameter, velocity,
+                                 atm_density, atm_viscosity)
         drag = (
             (24/(reynolds*k1*k2) *
             (1 + 0.1118*((reynolds*k1*k2)**0.6567))) +
@@ -58,7 +59,16 @@ def white(diameter, density=2300, atm_density=ATM_DENSITY,
     """
     Calculates terminal velocity of a given diameter (m) using White (1974)
     equation.  Default values are for andesite at sea level.
+
+    Not implemented yet.
     """
+    raise NotImplementedError(("The code for the White algorithm has not yet"
+                               "been validated and should not be used."))
+
+    # The code below is a first pass at a calculation of the White velocity
+    # but needs test data and validation before it can be used.
+    # At the moment, the values that it returns are orders-of-magnitude
+    # different to Stokes and Ganser.
 
     # Set up internal constants
     c1 = 0.25
@@ -69,7 +79,8 @@ def white(diameter, density=2300, atm_density=ATM_DENSITY,
                       atm_density, atm_viscosity)  # First guess is Stokes'
     velocity_difference = 99999
     while abs(velocity_difference) > 0.000001:
-        reynolds = _get_reynolds(diameter, velocity, atm_density, atm_viscosity)
+        reynolds = _get_reynolds(diameter, velocity,
+                                 atm_density, atm_viscosity)
         drag = (c1 + (24/reynolds) + (c2 / (1 + np.sqrt(reynolds))))
         new_velocity = np.sqrt((4 * diameter * GRAVITY *
                                (density - atm_density)) /
@@ -87,4 +98,3 @@ def _get_reynolds(diameter, velocity,
     """
     reynolds = diameter * velocity * atm_density / atm_viscosity
     return reynolds
-

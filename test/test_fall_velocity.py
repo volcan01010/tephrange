@@ -77,8 +77,8 @@ class TestWhite(unittest.TestCase):
         expected = [0.0068814, .04301, 0.17204, 0.68814]
         for i, d in enumerate(d_metres):
             velocity = fv.white(d, density=density,
-                                 atm_density=atm_density,
-                                 atm_viscosity=atm_viscosity)
+                                atm_density=atm_density,
+                                atm_viscosity=atm_viscosity)
             proportion = velocity / expected[i]
             tol = 0.005
             within_tolerance = (1.0 - tol) < proportion < (1.0 + tol)
@@ -90,5 +90,7 @@ class TestWhite(unittest.TestCase):
                                                       100 * (1 - proportion),
                                                       velocity,
                                                       expected[i]))
+
+
 if __name__ == '__main__':
     unittest.main()
