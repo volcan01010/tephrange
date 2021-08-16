@@ -36,7 +36,7 @@ def bp2003(diameter, rho_pumice=440, rho_glass=2300):
         diff_diam = diam_pumice - diam_lithic
         diff_rho = abs(rho_pumice - rho_glass)
         density = rho_glass - (((diam_phi - diam_lithic) /
-                                 diff_diam) * diff_rho)
+                                diff_diam) * diff_rho)
     return density
 
 
@@ -67,4 +67,3 @@ def single_solidity(density, rho_glass=2300, rho_atm=1.225):
                          'atmosphere density ({})'.format(density,
                                                           rho_atm))
     return (density - rho_atm) / (rho_glass - rho_atm)
-
