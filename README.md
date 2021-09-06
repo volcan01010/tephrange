@@ -119,7 +119,7 @@ Run tests (on Linux) with:
 
 Tephrange was created by Dr John A Stevenson at University of Edinburgh, now British Geological Survey ([volcan01010](https://github.com/volcan01010)).
 The functions with the `atmos` and `fall_velocity` modules were based on FORTAN
-routines written by Dr Frances Beckett at the UK Met Office.
+routines written by Dr Frances Beckett at the UK Met Office ([fbeckett](https://github.com/fbeckett)).
 The object-oriented approach to calculating particle trajectories was based on
 code written by Dr Elizabeth Watson, then of University of Leeds.
 
